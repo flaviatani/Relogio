@@ -3,6 +3,14 @@
     font-family: sans-serif;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
 .clock {
     width: 350px;
     height: 350px;
@@ -20,6 +28,7 @@
     text-align: center;
     transform: rotate(var(--rotation));
     color: white;
+    font-size: 1.5rem;
 }
 
 .clock .number1 { --rotation: 30deg; }
@@ -64,4 +73,18 @@
     width: 10px;
     height: 35%;
     background-color: black;
+}
+
+.clock::after {
+content: '';
+position: absolute;
+background-color: gray;
+z-index: 11;
+width: 15px;
+height: 15px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border-radius: 50%;
+
 }
